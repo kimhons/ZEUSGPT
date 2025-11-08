@@ -1,13 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:desktop_drop/desktop_drop.dart';
-import 'package:cross_file/cross_file.dart';
+// TODO: Add desktop_drop and cross_file packages to enable drag-and-drop
+// import 'package:desktop_drop/desktop_drop.dart';
+// import 'package:cross_file/cross_file.dart';
 import '../utils/platform_helper.dart';
 import '../services/drag_drop_handler.dart';
+
+/// Stub class for drag event details
+class _DropDoneDetails {
+  final List<XFile> files;
+  const _DropDoneDetails(this.files);
+}
+
+/// Stub widget to replace DropTarget until desktop_drop package is added
+class DropTarget extends StatelessWidget {
+  final Widget child;
+  final void Function(dynamic)? onDragEntered;
+  final void Function(dynamic)? onDragExited;
+  final void Function(_DropDoneDetails)? onDragDone;
+
+  const DropTarget({
+    super.key,
+    required this.child,
+    this.onDragEntered,
+    this.onDragExited,
+    this.onDragDone,
+  });
+
+  @override
+  Widget build(BuildContext context) => child;
+}
 
 /// A zone that accepts drag-and-drop file operations
 ///
 /// This widget provides visual feedback when files are dragged over it
 /// and handles the file drop operation.
+///
+/// CURRENTLY STUBBED: Requires desktop_drop and cross_file packages
 ///
 /// Usage:
 /// ```dart

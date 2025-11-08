@@ -1,12 +1,25 @@
-import 'package:flutter/material.dart';
-import 'package:desktop_drop/desktop_drop.dart';
-import 'package:cross_file/cross_file.dart';
+import 'package:flutter/foundation.dart';
+// TODO: Add desktop_drop and cross_file packages to enable drag-and-drop
+// import 'package:desktop_drop/desktop_drop.dart';
+// import 'package:cross_file/cross_file.dart';
 import '../utils/platform_helper.dart';
+
+/// Stub class to replace XFile until cross_file package is added
+class XFile {
+  final String name;
+  final String path;
+
+  const XFile(this.path, {this.name = ''});
+
+  Future<int> length() async => 0;
+}
 
 /// Service for handling drag-and-drop operations on desktop platforms
 ///
 /// This service provides functionality for handling file drops,
 /// validating file types, and managing drop events.
+///
+/// CURRENTLY STUBBED: Requires desktop_drop and cross_file packages
 ///
 /// Usage:
 /// ```dart

@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import '../utils/platform_helper.dart';
-import 'dart:html' as html;
 
 /// Service for managing SEO meta tags on web
 ///
@@ -34,32 +33,9 @@ class WebSEOService {
   }) {
     if (!isWeb) return;
 
-    try {
-      // Set page title
-      html.document.title = title;
-
-      // Set meta description
-      if (description != null) {
-        _setMetaTag('description', description);
-      }
-
-      // Set keywords
-      if (keywords != null && keywords.isNotEmpty) {
-        _setMetaTag('keywords', keywords.join(', '));
-      }
-
-      // Set author
-      if (author != null) {
-        _setMetaTag('author', author);
-      }
-
-      // Set robots
-      if (robots != null) {
-        _setMetaTag('robots', robots);
-      }
-    } catch (e) {
-      debugPrint('Failed to set page metadata: $e');
-    }
+    // TODO: Implement web-specific SEO when dart:html is available
+    // This service is currently disabled to avoid platform-specific import issues
+    debugPrint('WebSEOService: setPageMetadata called but not implemented');
   }
 
   /// Set Open Graph metadata for social media
@@ -74,34 +50,8 @@ class WebSEOService {
   }) {
     if (!isWeb) return;
 
-    try {
-      _setMetaProperty('og:title', title);
-      _setMetaProperty('og:url', url);
-
-      if (description != null) {
-        _setMetaProperty('og:description', description);
-      }
-
-      if (image != null) {
-        _setMetaProperty('og:image', image);
-      }
-
-      if (type != null) {
-        _setMetaProperty('og:type', type);
-      } else {
-        _setMetaProperty('og:type', 'website');
-      }
-
-      if (siteName != null) {
-        _setMetaProperty('og:site_name', siteName);
-      }
-
-      if (locale != null) {
-        _setMetaProperty('og:locale', locale);
-      }
-    } catch (e) {
-      debugPrint('Failed to set Open Graph metadata: $e');
-    }
+    // TODO: Implement web-specific SEO when dart:html is available
+    debugPrint('WebSEOService: setOpenGraphMetadata called but not implemented');
   }
 
   /// Set Twitter Card metadata
@@ -115,91 +65,34 @@ class WebSEOService {
   }) {
     if (!isWeb) return;
 
-    try {
-      _setMetaTag('twitter:card', card, name: 'twitter:card');
-      _setMetaTag('twitter:title', title, name: 'twitter:title');
-
-      if (description != null) {
-        _setMetaTag('twitter:description', description, name: 'twitter:description');
-      }
-
-      if (image != null) {
-        _setMetaTag('twitter:image', image, name: 'twitter:image');
-      }
-
-      if (site != null) {
-        _setMetaTag('twitter:site', site, name: 'twitter:site');
-      }
-
-      if (creator != null) {
-        _setMetaTag('twitter:creator', creator, name: 'twitter:creator');
-      }
-    } catch (e) {
-      debugPrint('Failed to set Twitter Card metadata: $e');
-    }
+    // TODO: Implement web-specific SEO when dart:html is available
+    debugPrint('WebSEOService: setTwitterCardMetadata called but not implemented');
   }
 
   /// Set canonical URL
   void setCanonicalUrl(String url) {
     if (!isWeb) return;
 
-    try {
-      var link = html.document.querySelector('link[rel="canonical"]') as html.LinkElement?;
-
-      if (link == null) {
-        link = html.LinkElement()
-          ..rel = 'canonical'
-          ..href = url;
-        html.document.head?.append(link);
-      } else {
-        link.href = url;
-      }
-    } catch (e) {
-      debugPrint('Failed to set canonical URL: $e');
-    }
+    // TODO: Implement web-specific SEO when dart:html is available
+    debugPrint('WebSEOService: setCanonicalUrl called but not implemented');
   }
 
   /// Add structured data (JSON-LD)
   void addStructuredData(Map<String, dynamic> data) {
     if (!isWeb) return;
 
-    try {
-      final script = html.ScriptElement()
-        ..type = 'application/ld+json'
-        ..text = _jsonEncode(data);
-
-      html.document.head?.append(script);
-    } catch (e) {
-      debugPrint('Failed to add structured data: $e');
-    }
+    // TODO: Implement web-specific SEO when dart:html is available
+    debugPrint('WebSEOService: addStructuredData called but not implemented');
   }
 
   /// Set meta tag by name
-  void _setMetaTag(String name, String content, {String? name: name}) {
-    var meta = html.document.querySelector('meta[name="$name"]') as html.MetaElement?;
-
-    if (meta == null) {
-      meta = html.MetaElement()
-        ..name = name
-        ..content = content;
-      html.document.head?.append(meta);
-    } else {
-      meta.content = content;
-    }
+  void _setMetaTag(String name, String content) {
+    // Stub implementation - requires dart:html
   }
 
   /// Set meta tag by property
   void _setMetaProperty(String property, String content) {
-    var meta = html.document.querySelector('meta[property="$property"]') as html.MetaElement?;
-
-    if (meta == null) {
-      meta = html.MetaElement()
-        ..setAttribute('property', property)
-        ..content = content;
-      html.document.head?.append(meta);
-    } else {
-      meta.content = content;
-    }
+    // Stub implementation - requires dart:html
   }
 
   /// Simple JSON encoder for structured data
