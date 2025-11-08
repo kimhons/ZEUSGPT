@@ -477,7 +477,7 @@ class _AttachmentPickerScreenState
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
+                    color: Colors.black.withOpacity(0.05),
                     blurRadius: 10,
                     offset: const Offset(0, -2),
                   ),
@@ -620,7 +620,7 @@ class _AttachmentPickerScreenState
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.black.withValues(alpha: 0.6),
+                            color: Colors.black.withOpacity(0.6),
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(

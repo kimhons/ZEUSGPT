@@ -53,7 +53,7 @@ class ZeusCard extends StatelessWidget {
         boxShadow: elevation > 0
             ? [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
+                  color: Colors.black.withOpacity(isDark ? 0.3 : 0.1),
                   blurRadius: elevation * 2,
                   offset: Offset(0, elevation),
                 ),
@@ -112,7 +112,7 @@ class ZeusGradientCard extends StatelessWidget {
         boxShadow: elevation > 0
             ? [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
+                  color: Colors.black.withOpacity(0.2),
                   blurRadius: elevation * 2,
                   offset: Offset(0, elevation),
                 ),

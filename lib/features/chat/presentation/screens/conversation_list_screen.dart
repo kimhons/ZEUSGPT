@@ -432,12 +432,12 @@ class _ConversationListScreenState
                   decoration: BoxDecoration(
                     color: isDark
                         ? AppColors.surface(false)
-                        : AppColors.surface(true).withValues(alpha: 0.05),
+                        : AppColors.surface(true).withOpacity(0.05),
                     border: Border(
                       bottom: BorderSide(
                         color: isDark
-                            ? Colors.white.withValues(alpha: 0.1)
-                            : Colors.black.withValues(alpha: 0.1),
+                            ? Colors.white.withOpacity(0.1)
+                            : Colors.black.withOpacity(0.1),
                       ),
                     ),
                   ),
@@ -547,7 +547,7 @@ class _ConversationListScreenState
         label: Text(label),
         onDeleted: onRemove,
         deleteIcon: const Icon(Icons.close, size: 16),
-        backgroundColor: AppColors.primary.withValues(alpha: 0.1),
+        backgroundColor: AppColors.primary.withOpacity(0.1),
         labelStyle: AppTextStyles.labelSmall().copyWith(
           color: AppColors.primary,
           fontWeight: FontWeight.w600,

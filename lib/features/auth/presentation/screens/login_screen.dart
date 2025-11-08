@@ -200,7 +200,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.primary.withValues(alpha: 0.3),
+                            color: AppColors.primary.withOpacity(0.3),
                             blurRadius: 20,
                             spreadRadius: 5,
                           ),
@@ -357,7 +357,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                   color: (isDark
                                           ? AppColors.textSecondary(isDark)
                                           : AppColors.textSecondary(!isDark))
-                                      .withValues(alpha: 0.3),
+                                      .withOpacity(0.3),
                                 ),
                               ),
                             ),
@@ -380,7 +380,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                   color: (isDark
                                           ? AppColors.textSecondary(isDark)
                                           : AppColors.textSecondary(!isDark))
-                                      .withValues(alpha: 0.3),
+                                      .withOpacity(0.3),
                                 ),
                               ),
                             ),

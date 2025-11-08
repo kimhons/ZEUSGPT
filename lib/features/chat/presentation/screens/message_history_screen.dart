@@ -240,7 +240,7 @@ class _MessageHistoryScreenState extends ConsumerState<MessageHistoryScreen> {
                       Text(
                         '${history.length} version(s)',
                         style: AppTextStyles.bodySmall().copyWith(
-                          color: Colors.white.withValues(alpha: 0.8),
+                          color: Colors.white.withOpacity(0.8),
                         ),
                       ),
                     ],
@@ -252,7 +252,7 @@ class _MessageHistoryScreenState extends ConsumerState<MessageHistoryScreen> {
                     vertical: AppSpacing.sm,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.2),
+                    color: Colors.white.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
@@ -309,7 +309,7 @@ class _MessageHistoryScreenState extends ConsumerState<MessageHistoryScreen> {
                 padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
                   color: isCurrent
-                      ? AppColors.primary.withValues(alpha: 0.1)
+                      ? AppColors.primary.withOpacity(0.1)
                       : Colors.transparent,
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(12),
@@ -507,7 +507,7 @@ class _MessageHistoryScreenState extends ConsumerState<MessageHistoryScreen> {
               vertical: AppSpacing.xs,
             ),
             decoration: BoxDecoration(
-              color: accentColor.withValues(alpha: 0.2),
+              color: accentColor.withOpacity(0.2),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
@@ -529,10 +529,10 @@ class _MessageHistoryScreenState extends ConsumerState<MessageHistoryScreen> {
           Container(
             padding: const EdgeInsets.all(AppSpacing.md),
             decoration: BoxDecoration(
-              color: accentColor.withValues(alpha: 0.05),
+              color: accentColor.withOpacity(0.05),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: accentColor.withValues(alpha: 0.3),
+                color: accentColor.withOpacity(0.3),
               ),
             ),
             child: Text(

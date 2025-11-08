@@ -164,7 +164,7 @@ class _NewChatScreenState extends ConsumerState<NewChatScreen> {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.primary.withValues(alpha: 0.3),
+                            color: AppColors.primary.withOpacity(0.3),
                             blurRadius: 20,
                             spreadRadius: 5,
                           ),
@@ -241,17 +241,17 @@ class _NewChatScreenState extends ConsumerState<NewChatScreen> {
                       padding: const EdgeInsets.all(AppSpacing.md),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? AppColors.primary.withValues(alpha: 0.1)
+                            ? AppColors.primary.withOpacity(0.1)
                             : (isDark
                                 ? AppColors.surface(false)
-                                : AppColors.surface(true).withValues(alpha: 0.05)),
+                                : AppColors.surface(true).withOpacity(0.05)),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
                           color: isSelected
                               ? AppColors.primary
                               : (isDark
-                                  ? Colors.white.withValues(alpha: 0.1)
-                                  : Colors.black.withValues(alpha: 0.1)),
+                                  ? Colors.white.withOpacity(0.1)
+                                  : Colors.black.withOpacity(0.1)),
                           width: isSelected ? 2 : 1,
                         ),
                       ),

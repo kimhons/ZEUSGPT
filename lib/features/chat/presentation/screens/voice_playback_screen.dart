@@ -410,7 +410,7 @@ class _VoicePlaybackScreenState extends ConsumerState<VoicePlaybackScreen>
                 thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
                 overlayShape: const RoundSliderOverlayShape(overlayRadius: 16),
                 thumbColor: AppColors.primary,
-                overlayColor: AppColors.primary.withValues(alpha: 0.2),
+                overlayColor: AppColors.primary.withOpacity(0.2),
               ),
               child: Slider(
                 value: _currentPosition.inMilliseconds.toDouble(),
@@ -527,7 +527,7 @@ class _VoicePlaybackScreenState extends ConsumerState<VoicePlaybackScreen>
               gradient: AppColors.zeusGradient,
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primary.withValues(alpha: 0.3),
+                  color: AppColors.primary.withOpacity(0.3),
                   blurRadius: 20,
                   spreadRadius: 2,
                 ),
@@ -726,7 +726,7 @@ class _VoicePlaybackScreenState extends ConsumerState<VoicePlaybackScreen>
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                color: Colors.red.withValues(alpha: 0.1),
+                color: Colors.red.withOpacity(0.1),
                 shape: BoxShape.circle,
               ),
               child: const Icon(

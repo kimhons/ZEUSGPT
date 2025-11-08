@@ -410,7 +410,7 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    widget.model.provider.color.withValues(alpha: 0.8),
+                    widget.model.provider.color.withOpacity(0.8),
                     widget.model.provider.color,
                   ],
                 ),
@@ -432,10 +432,10 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
                         vertical: 4,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.2),
+                        color: Colors.white.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.3),
+                          color: Colors.white.withOpacity(0.3),
                         ),
                       ),
                       child: Row(
@@ -475,7 +475,7 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
                       Text(
                         'Version ${widget.model.version}',
                         style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.9),
+                          color: Colors.white.withOpacity(0.9),
                           fontSize: 14,
                         ),
                       ),
@@ -594,12 +594,12 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            color.withValues(alpha: 0.1),
-            color.withValues(alpha: 0.05),
+            color.withOpacity(0.1),
+            color.withOpacity(0.05),
           ],
         ),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        border: Border.all(color: color.withOpacity(0.3)),
       ),
       child: Column(
         children: [
@@ -746,7 +746,7 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
                   avatar: Icon(useCase.icon, size: 16),
                   label: Text(useCase.label),
                   backgroundColor:
-                      widget.model.provider.color.withValues(alpha: 0.1),
+                      widget.model.provider.color.withOpacity(0.1),
                 );
               }).toList(),
             ),
@@ -1159,7 +1159,7 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
                                   vertical: 2,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: widget.model.provider.color.withValues(alpha: 0.1),
+                                  color: widget.model.provider.color.withOpacity(0.1),
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Text(
@@ -1272,7 +1272,7 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      color.withValues(alpha: 0.7),
+                      color.withOpacity(0.7),
                       color,
                     ],
                   ),
@@ -1344,7 +1344,7 @@ class _ModelDetailsScreenState extends ConsumerState<ModelDetailsScreen>
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withOpacity(0.05),
             blurRadius: 10,
             offset: const Offset(0, -5),
           ),

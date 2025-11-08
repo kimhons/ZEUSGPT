@@ -153,7 +153,7 @@ class _ZeusTextFieldState extends State<ZeusTextField> {
             suffixIcon: _buildSuffixIcon(isDark),
             filled: widget.filled,
             fillColor: isDark
-                ? AppColors.surface(true).withValues(alpha: 0.5)
+                ? AppColors.surface(true).withOpacity(0.5)
                 : AppColors.surface(false),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
@@ -196,8 +196,8 @@ class _ZeusTextFieldState extends State<ZeusTextField> {
               borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
               borderSide: BorderSide(
                 color: isDark
-                    ? AppColors.border(true).withValues(alpha: 0.5)
-                    : AppColors.border(false).withValues(alpha: 0.5),
+                    ? AppColors.border(true).withOpacity(0.5)
+                    : AppColors.border(false).withOpacity(0.5),
               ),
             ),
             contentPadding: const EdgeInsets.symmetric(

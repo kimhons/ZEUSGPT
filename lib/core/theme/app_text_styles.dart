@@ -501,6 +501,6 @@ class AppTextStyles {
 
   /// Apply opacity to any text style
   static TextStyle withOpacity(TextStyle style, double opacity) {
-    return style.copyWith(color: style.color?.withValues(alpha: opacity));
+    return style.copyWith(color: style.color?.withOpacity(opacity));
   }
 }

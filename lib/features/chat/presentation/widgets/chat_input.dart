@@ -58,8 +58,8 @@ class _ChatInputState extends State<ChatInput> {
         border: Border(
           top: BorderSide(
             color: isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.1),
+                ? Colors.white.withOpacity(0.1)
+                : Colors.black.withOpacity(0.1),
           ),
         ),
       ),
@@ -89,8 +89,8 @@ class _ChatInputState extends State<ChatInput> {
                   borderRadius: BorderRadius.circular(24),
                   border: Border.all(
                     color: isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.1),
+                        ? Colors.white.withOpacity(0.1)
+                        : Colors.black.withOpacity(0.1),
                   ),
                 ),
                 child: TextField(
@@ -126,7 +126,7 @@ class _ChatInputState extends State<ChatInput> {
                 width: 44,
                 height: 44,
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.1),
+                  color: AppColors.primary.withOpacity(0.1),
                   shape: BoxShape.circle,
                 ),
                 child: const Center(

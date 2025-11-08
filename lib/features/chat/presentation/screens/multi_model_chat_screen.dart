@@ -667,7 +667,7 @@ class _MultiModelChatScreenState extends ConsumerState<MultiModelChatScreen> {
                                   setState(() => _selectedModels.remove(model));
                                 }
                               : null,
-                          backgroundColor: model.provider.color.withValues(alpha: 0.1),
+                          backgroundColor: model.provider.color.withOpacity(0.1),
                         ),
                       ),
                     );
@@ -779,7 +779,7 @@ class _MultiModelChatScreenState extends ConsumerState<MultiModelChatScreen> {
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primary.withValues(alpha: 0.2),
+              color: AppColors.primary.withOpacity(0.2),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -950,7 +950,7 @@ class _MultiModelChatScreenState extends ConsumerState<MultiModelChatScreen> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(
-          color: model.provider.color.withValues(alpha: 0.3),
+          color: model.provider.color.withOpacity(0.3),
           width: 2,
         ),
       ),
@@ -963,8 +963,8 @@ class _MultiModelChatScreenState extends ConsumerState<MultiModelChatScreen> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  model.provider.color.withValues(alpha: 0.2),
-                  model.provider.color.withValues(alpha: 0.1),
+                  model.provider.color.withOpacity(0.2),
+                  model.provider.color.withOpacity(0.1),
                 ],
               ),
               borderRadius: const BorderRadius.vertical(
@@ -1179,7 +1179,7 @@ class _MultiModelChatScreenState extends ConsumerState<MultiModelChatScreen> {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withOpacity(0.05),
             blurRadius: 10,
             offset: const Offset(0, -5),
           ),
@@ -1378,7 +1378,7 @@ class _ModelSelectionSheetState extends State<_ModelSelectionSheet> {
                   secondary: Container(
                     padding: const EdgeInsets.all(AppSpacing.sm),
                     decoration: BoxDecoration(
-                      color: model.provider.color.withValues(alpha: 0.1),
+                      color: model.provider.color.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(

@@ -333,7 +333,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.primary.withValues(alpha: 0.3),
+                            color: AppColors.primary.withOpacity(0.3),
                             blurRadius: 20,
                             spreadRadius: 5,
                           ),
@@ -532,7 +532,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               color: (isDark
                                       ? AppColors.textSecondary(isDark)
                                       : AppColors.textSecondary(!isDark))
-                                  .withValues(alpha: 0.3),
+                                  .withOpacity(0.3),
                             ),
                           ),
                           Padding(
@@ -553,7 +553,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               color: (isDark
                                       ? AppColors.textSecondary(isDark)
                                       : AppColors.textSecondary(!isDark))
-                                  .withValues(alpha: 0.3),
+                                  .withOpacity(0.3),
                             ),
                           ),
                         ],

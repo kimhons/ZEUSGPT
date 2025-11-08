@@ -327,7 +327,7 @@ class _VoiceRecordingScreenState extends ConsumerState<VoiceRecordingScreen>
                       'Max ${_formatDuration(widget.maxDuration)}',
                       style: TextStyle(
                         fontSize: 14,
-                        color: Colors.white.withValues(alpha: 0.6),
+                        color: Colors.white.withOpacity(0.6),
                       ),
                     ),
 
@@ -413,7 +413,7 @@ class _VoiceRecordingScreenState extends ConsumerState<VoiceRecordingScreen>
                 width: 3,
                 height: amplitude * 100,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.7),
+                  color: Colors.white.withOpacity(0.7),
                   borderRadius: BorderRadius.circular(2),
                 ),
               );
@@ -466,9 +466,9 @@ class _VoiceRecordingScreenState extends ConsumerState<VoiceRecordingScreen>
               thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 8),
               overlayShape: const RoundSliderOverlayShape(overlayRadius: 16),
               activeTrackColor: AppColors.primary,
-              inactiveTrackColor: Colors.white.withValues(alpha: 0.3),
+              inactiveTrackColor: Colors.white.withOpacity(0.3),
               thumbColor: AppColors.primary,
-              overlayColor: AppColors.primary.withValues(alpha: 0.2),
+              overlayColor: AppColors.primary.withOpacity(0.2),
             ),
             child: Slider(
               value: _playbackPosition.inMilliseconds.toDouble(),
@@ -511,10 +511,10 @@ class _VoiceRecordingScreenState extends ConsumerState<VoiceRecordingScreen>
       return Container(
         padding: const EdgeInsets.all(AppSpacing.lg),
         decoration: BoxDecoration(
-          color: Colors.grey.shade900.withValues(alpha: 0.9),
+          color: Colors.grey.shade900.withOpacity(0.9),
           border: Border(
             top: BorderSide(
-              color: Colors.white.withValues(alpha: 0.1),
+              color: Colors.white.withOpacity(0.1),
             ),
           ),
         ),
@@ -562,10 +562,10 @@ class _VoiceRecordingScreenState extends ConsumerState<VoiceRecordingScreen>
     return Container(
       padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
-        color: Colors.grey.shade900.withValues(alpha: 0.9),
+        color: Colors.grey.shade900.withOpacity(0.9),
         border: Border(
           top: BorderSide(
-            color: Colors.white.withValues(alpha: 0.1),
+            color: Colors.white.withOpacity(0.1),
           ),
         ),
       ),
@@ -588,7 +588,7 @@ class _VoiceRecordingScreenState extends ConsumerState<VoiceRecordingScreen>
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: Colors.white.withValues(alpha: 0.3),
+                color: Colors.white.withOpacity(0.3),
                 width: 2,
               ),
             ),

@@ -218,7 +218,7 @@ class AppColors {
 
   /// Add opacity to any color
   static Color withOpacity(Color color, double opacity) {
-    return color.withValues(alpha: opacity);
+    return color.withOpacity(opacity);
   }
 
   /// Lighten a color by percentage (0.0 to 1.0)

@@ -316,7 +316,7 @@ class _CodeBlockViewerScreenState extends ConsumerState<CodeBlockViewerScreen> {
             child: Container(
               padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.2),
+                color: Colors.white.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
@@ -342,7 +342,7 @@ class _CodeBlockViewerScreenState extends ConsumerState<CodeBlockViewerScreen> {
                   Text(
                     widget.codeBlock.description!,
                     style: AppTextStyles.bodySmall().copyWith(
-                      color: Colors.white.withValues(alpha: 0.8),
+                      color: Colors.white.withOpacity(0.8),
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -356,7 +356,7 @@ class _CodeBlockViewerScreenState extends ConsumerState<CodeBlockViewerScreen> {
               vertical: AppSpacing.xs,
             ),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.2),
+              color: Colors.white.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(

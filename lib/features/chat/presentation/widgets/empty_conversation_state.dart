@@ -34,7 +34,7 @@ class EmptyConversationState extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.primary.withValues(alpha: 0.3),
+                          color: AppColors.primary.withOpacity(0.3),
                           blurRadius: 30,
                           spreadRadius: 10,
                         ),
@@ -150,12 +150,12 @@ class EmptyConversationState extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark
             ? AppColors.surface(false)
-            : AppColors.surface(true).withValues(alpha: 0.05),
+            : AppColors.surface(true).withOpacity(0.05),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : Colors.black.withValues(alpha: 0.1),
+              ? Colors.white.withOpacity(0.1)
+              : Colors.black.withOpacity(0.1),
         ),
       ),
       child: Row(

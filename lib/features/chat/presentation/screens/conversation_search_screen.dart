@@ -321,12 +321,12 @@ class _ConversationSearchScreenState
             decoration: BoxDecoration(
               color: isDark
                   ? AppColors.surface(false)
-                  : AppColors.surface(true).withValues(alpha: 0.05),
+                  : AppColors.surface(true).withOpacity(0.05),
               border: Border(
                 bottom: BorderSide(
                   color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : Colors.black.withValues(alpha: 0.1),
+                      ? Colors.white.withOpacity(0.1)
+                      : Colors.black.withOpacity(0.1),
                 ),
               ),
             ),
@@ -530,8 +530,8 @@ class _SearchResultCard extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: isUserMessage
-                          ? Colors.blue.withValues(alpha: 0.1)
-                          : Colors.green.withValues(alpha: 0.1),
+                          ? Colors.blue.withOpacity(0.1)
+                          : Colors.green.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
@@ -559,7 +559,7 @@ class _SearchResultCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: isDark
                       ? AppColors.surface(false)
-                      : AppColors.surface(true).withValues(alpha: 0.05),
+                      : AppColors.surface(true).withOpacity(0.05),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: RichText(
@@ -647,7 +647,7 @@ class _SearchResultCard extends StatelessWidget {
       spans.add(TextSpan(
         text: text.substring(matchIndex, matchIndex + query.length),
         style: AppTextStyles.bodySmall().copyWith(
-          backgroundColor: Colors.yellow.withValues(alpha: 0.3),
+          backgroundColor: Colors.yellow.withOpacity(0.3),
           fontWeight: FontWeight.bold,
         ),
       ));

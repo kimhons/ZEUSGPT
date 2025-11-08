@@ -238,12 +238,12 @@ class _MessageEditScreenState extends ConsumerState<MessageEditScreen> {
               decoration: BoxDecoration(
                 color: isDark
                     ? AppColors.surface(false)
-                    : AppColors.surface(true).withValues(alpha: 0.05),
+                    : AppColors.surface(true).withOpacity(0.05),
                 border: Border(
                   bottom: BorderSide(
                     color: isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.1),
+                        ? Colors.white.withOpacity(0.1)
+                        : Colors.black.withOpacity(0.1),
                   ),
                 ),
               ),
@@ -268,7 +268,7 @@ class _MessageEditScreenState extends ConsumerState<MessageEditScreen> {
                         vertical: AppSpacing.xs,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.orange.withValues(alpha: 0.2),
+                        color: Colors.orange.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Row(
@@ -310,8 +310,8 @@ class _MessageEditScreenState extends ConsumerState<MessageEditScreen> {
                   border: Border(
                     top: BorderSide(
                       color: isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.1),
+                          ? Colors.white.withOpacity(0.1)
+                          : Colors.black.withOpacity(0.1),
                     ),
                   ),
                 ),
@@ -367,12 +367,12 @@ class _MessageEditScreenState extends ConsumerState<MessageEditScreen> {
           decoration: BoxDecoration(
             color: isDark
                 ? AppColors.surface(false)
-                : AppColors.surface(true).withValues(alpha: 0.05),
+                : AppColors.surface(true).withOpacity(0.05),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.1),
+                  ? Colors.white.withOpacity(0.1)
+                  : Colors.black.withOpacity(0.1),
             ),
           ),
           child: Column(
@@ -439,10 +439,10 @@ class _MessageEditScreenState extends ConsumerState<MessageEditScreen> {
         Container(
           padding: const EdgeInsets.all(AppSpacing.md),
           decoration: BoxDecoration(
-            color: Colors.blue.withValues(alpha: 0.1),
+            color: Colors.blue.withOpacity(0.1),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: Colors.blue.withValues(alpha: 0.3),
+              color: Colors.blue.withOpacity(0.3),
             ),
           ),
           child: Row(
@@ -521,12 +521,12 @@ class _MessageEditScreenState extends ConsumerState<MessageEditScreen> {
           decoration: BoxDecoration(
             color: isDark
                 ? AppColors.surface(false)
-                : AppColors.surface(true).withValues(alpha: 0.05),
+                : AppColors.surface(true).withOpacity(0.05),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.1),
+                  ? Colors.white.withOpacity(0.1)
+                  : Colors.black.withOpacity(0.1),
             ),
           ),
           child: Column(
@@ -557,7 +557,7 @@ class _MessageEditScreenState extends ConsumerState<MessageEditScreen> {
                       vertical: 2,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.grey.withValues(alpha: 0.2),
+                      color: Colors.grey.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(

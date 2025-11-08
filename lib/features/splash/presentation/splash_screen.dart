@@ -232,7 +232,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                       style: TextStyle(
                         fontSize: taglineSize,
                         fontWeight: FontWeight.w500,
-                        color: Colors.white.withValues(alpha: 0.9),
+                        color: Colors.white.withOpacity(0.9),
                         letterSpacing: 0.5,
                       ),
                       textAlign: TextAlign.center,
@@ -273,7 +273,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                   'v${AppConstants.appVersion}',
                   style: TextStyle(
                     fontSize: 12,
-                    color: Colors.white.withValues(alpha: 0.7),
+                    color: Colors.white.withOpacity(0.7),
                     fontWeight: FontWeight.w500,
                   ),
                   textAlign: TextAlign.center,

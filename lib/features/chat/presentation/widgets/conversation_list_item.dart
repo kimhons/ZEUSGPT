@@ -112,7 +112,7 @@ class ConversationListItem extends ConsumerWidget {
                   decoration: BoxDecoration(
                     color: isDark
                         ? AppColors.surface(false)
-                        : AppColors.surface(true).withValues(alpha: 0.05),
+                        : AppColors.surface(true).withOpacity(0.05),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
@@ -177,7 +177,7 @@ class ConversationListItem extends ConsumerWidget {
                               vertical: 2,
                             ),
                             decoration: BoxDecoration(
-                              color: AppColors.primary.withValues(alpha: 0.1),
+                              color: AppColors.primary.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Text(

@@ -483,7 +483,7 @@ class _MessageContextMenuScreenState
             decoration: BoxDecoration(
               color: isDark
                   ? AppColors.surface(false)
-                  : AppColors.surface(true).withValues(alpha: 0.05),
+                  : AppColors.surface(true).withOpacity(0.05),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(

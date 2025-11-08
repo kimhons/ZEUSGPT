@@ -250,7 +250,7 @@ class _AttachmentViewerScreenState
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.black.withValues(alpha: 0.7),
+            Colors.black.withOpacity(0.7),
             Colors.transparent,
           ],
         ),
@@ -287,7 +287,7 @@ class _AttachmentViewerScreenState
                   Text(
                     '${_currentIndex + 1} of ${widget.attachments.length}',
                     style: AppTextStyles.bodySmall().copyWith(
-                      color: Colors.white.withValues(alpha: 0.7),
+                      color: Colors.white.withOpacity(0.7),
                     ),
                   ),
               ],
@@ -311,7 +311,7 @@ class _AttachmentViewerScreenState
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,
           colors: [
-            Colors.black.withValues(alpha: 0.7),
+            Colors.black.withOpacity(0.7),
             Colors.transparent,
           ],
         ),
@@ -449,7 +449,7 @@ class _AttachmentViewerScreenState
           Text(
             'PDF Document',
             style: AppTextStyles.bodyMedium().copyWith(
-              color: Colors.white.withValues(alpha: 0.7),
+              color: Colors.white.withOpacity(0.7),
             ),
           ),
           const SizedBox(height: AppSpacing.xl),
@@ -500,7 +500,7 @@ class _AttachmentViewerScreenState
           Text(
             'Document',
             style: AppTextStyles.bodyMedium().copyWith(
-              color: Colors.white.withValues(alpha: 0.7),
+              color: Colors.white.withOpacity(0.7),
             ),
           ),
           const SizedBox(height: AppSpacing.xl),
@@ -551,7 +551,7 @@ class _AttachmentViewerScreenState
           Text(
             'Video',
             style: AppTextStyles.bodyMedium().copyWith(
-              color: Colors.white.withValues(alpha: 0.7),
+              color: Colors.white.withOpacity(0.7),
             ),
           ),
           const SizedBox(height: AppSpacing.xl),
@@ -608,7 +608,7 @@ class _AttachmentViewerScreenState
           Text(
             'Audio',
             style: AppTextStyles.bodyMedium().copyWith(
-              color: Colors.white.withValues(alpha: 0.7),
+              color: Colors.white.withOpacity(0.7),
             ),
           ),
           const SizedBox(height: AppSpacing.xl),
@@ -665,7 +665,7 @@ class _AttachmentViewerScreenState
           Text(
             'File',
             style: AppTextStyles.bodyMedium().copyWith(
-              color: Colors.white.withValues(alpha: 0.7),
+              color: Colors.white.withOpacity(0.7),
             ),
           ),
           const SizedBox(height: AppSpacing.xl),

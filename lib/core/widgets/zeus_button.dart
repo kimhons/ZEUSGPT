@@ -300,9 +300,9 @@ class ZeusButton extends StatelessWidget {
       backgroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
         if (variant == ZeusButtonVariant.text) return Colors.transparent;
         if (variant == ZeusButtonVariant.outlined) return Colors.transparent;
-        if (disabled) return backgroundColor?.withValues(alpha: 0.5);
+        if (disabled) return backgroundColor?.withOpacity(0.5);
         if (states.contains(WidgetState.pressed)) {
-          return backgroundColor?.withValues(alpha: 0.8);
+          return backgroundColor?.withOpacity(0.8);
         }
         return backgroundColor;
       }),

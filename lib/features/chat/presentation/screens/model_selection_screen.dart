@@ -544,7 +544,7 @@ class _ModelSelectionScreenState extends ConsumerState<ModelSelectionScreen>
                   Container(
                     padding: const EdgeInsets.all(AppSpacing.sm),
                     decoration: BoxDecoration(
-                      color: model.provider.color.withValues(alpha: 0.1),
+                      color: model.provider.color.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(

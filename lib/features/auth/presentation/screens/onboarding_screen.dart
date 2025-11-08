@@ -243,7 +243,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                                 : (isDark
                                         ? AppColors.textSecondary(isDark)
                                         : AppColors.textSecondary(!isDark))
-                                    .withValues(alpha: 0.3),
+                                    .withOpacity(0.3),
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
@@ -291,11 +291,11 @@ class _OnboardingFeatureCard extends StatelessWidget {
       padding: const EdgeInsets.all(AppSpacing.xl),
       decoration: BoxDecoration(
         color: isDark
-            ? AppColors.surface(isDark).withValues(alpha: 0.3)
-            : AppColors.surface(!isDark).withValues(alpha: 0.5),
+            ? AppColors.surface(isDark).withOpacity(0.3)
+            : AppColors.surface(!isDark).withOpacity(0.5),
         borderRadius: BorderRadius.circular(AppSpacing.radiusLg),
         border: Border.all(
-          color: AppColors.primary.withValues(alpha: 0.2),
+          color: AppColors.primary.withOpacity(0.2),
         ),
       ),
       child: Column(
@@ -388,7 +388,7 @@ class _OnboardingPageWidget extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.primary.withValues(alpha: 0.3),
+                    color: AppColors.primary.withOpacity(0.3),
                     blurRadius: 30,
                     spreadRadius: 10,
                   ),

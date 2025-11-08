@@ -201,7 +201,7 @@ class _VerifyEmailScreenState extends ConsumerState<VerifyEmailScreen> {
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: AppColors.primary.withValues(alpha: 0.3),
+                            color: AppColors.primary.withOpacity(0.3),
                             blurRadius: 20,
                             spreadRadius: 5,
                           ),
@@ -318,7 +318,7 @@ class _VerifyEmailScreenState extends ConsumerState<VerifyEmailScreen> {
                         color: (isDark
                                 ? AppColors.textSecondary(isDark)
                                 : AppColors.textSecondary(!isDark))
-                            .withValues(alpha: 0.3),
+                            .withOpacity(0.3),
                       ),
                     ),
                     Padding(
@@ -339,7 +339,7 @@ class _VerifyEmailScreenState extends ConsumerState<VerifyEmailScreen> {
                         color: (isDark
                                 ? AppColors.textSecondary(isDark)
                                 : AppColors.textSecondary(!isDark))
-                            .withValues(alpha: 0.3),
+                            .withOpacity(0.3),
                       ),
                     ),
                   ],
@@ -360,10 +360,10 @@ class _VerifyEmailScreenState extends ConsumerState<VerifyEmailScreen> {
                 Container(
                   padding: const EdgeInsets.all(AppSpacing.lg),
                   decoration: BoxDecoration(
-                    color: AppColors.info.withValues(alpha: 0.1),
+                    color: AppColors.info.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
                     border: Border.all(
-                      color: AppColors.info.withValues(alpha: 0.3),
+                      color: AppColors.info.withOpacity(0.3),
                     ),
                   ),
                   child: Column(

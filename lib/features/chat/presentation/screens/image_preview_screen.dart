@@ -309,7 +309,7 @@ class _ImagePreviewScreenState extends ConsumerState<ImagePreviewScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.black.withValues(alpha: 0.7),
+              Colors.black.withOpacity(0.7),
               Colors.transparent,
             ],
           ),
@@ -357,7 +357,7 @@ class _ImagePreviewScreenState extends ConsumerState<ImagePreviewScreen> {
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
             colors: [
-              Colors.black.withValues(alpha: 0.9),
+              Colors.black.withOpacity(0.9),
               Colors.transparent,
             ],
           ),
@@ -410,14 +410,14 @@ class _ImagePreviewScreenState extends ConsumerState<ImagePreviewScreen> {
                         decoration: InputDecoration(
                           hintText: 'Add a caption...',
                           hintStyle: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.5),
+                            color: Colors.white.withOpacity(0.5),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24),
                             borderSide: BorderSide.none,
                           ),
                           filled: true,
-                          fillColor: Colors.white.withValues(alpha: 0.1),
+                          fillColor: Colors.white.withOpacity(0.1),
                           contentPadding: const EdgeInsets.symmetric(
                             horizontal: AppSpacing.md,
                             vertical: AppSpacing.sm,
@@ -539,7 +539,7 @@ class _ImagePreviewScreenState extends ConsumerState<ImagePreviewScreen> {
             vertical: AppSpacing.xs,
           ),
           decoration: BoxDecoration(
-            color: Colors.black.withValues(alpha: 0.6),
+            color: Colors.black.withOpacity(0.6),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Row(
@@ -552,7 +552,7 @@ class _ImagePreviewScreenState extends ConsumerState<ImagePreviewScreen> {
                 decoration: BoxDecoration(
                   color: index == _currentIndex
                       ? AppColors.primary
-                      : Colors.white.withValues(alpha: 0.5),
+                      : Colors.white.withOpacity(0.5),
                   borderRadius: BorderRadius.circular(4),
                 ),
               );
@@ -565,7 +565,7 @@ class _ImagePreviewScreenState extends ConsumerState<ImagePreviewScreen> {
 
   Widget _buildEditModeOverlay() {
     return Container(
-      color: Colors.black.withValues(alpha: 0.5),
+      color: Colors.black.withOpacity(0.5),
       child: Center(
         child: Card(
           margin: const EdgeInsets.all(AppSpacing.lg),

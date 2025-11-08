@@ -501,12 +501,12 @@ class _ConversationDetailScreenState
       decoration: BoxDecoration(
         color: isDark
             ? AppColors.surface(false)
-            : AppColors.surface(true).withValues(alpha: 0.05),
+            : AppColors.surface(true).withOpacity(0.05),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : Colors.black.withValues(alpha: 0.1),
+              ? Colors.white.withOpacity(0.1)
+              : Colors.black.withOpacity(0.1),
         ),
       ),
       child: child,
@@ -552,10 +552,10 @@ class _ConversationDetailScreenState
         child: Container(
           padding: const EdgeInsets.all(AppSpacing.md),
           decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
+            color: color.withOpacity(0.1),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: color.withValues(alpha: 0.3),
+              color: color.withOpacity(0.3),
             ),
           ),
           child: Row(

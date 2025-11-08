@@ -46,7 +46,7 @@ class ErrorView extends StatelessWidget {
             Icon(
               _getErrorIcon(isNetworkError, isAuthError),
               size: 80,
-              color: AppColors.error.withValues(alpha: 0.8),
+              color: AppColors.error.withOpacity(0.8),
             ),
             const SizedBox(height: AppSpacing.xl),
 
@@ -77,7 +77,7 @@ class ErrorView extends StatelessWidget {
                 padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
                   color: (isDark ? Colors.grey[800] : Colors.grey[200])
-                      ?.withValues(alpha: 0.5),
+                      ?.withOpacity(0.5),
                   borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
                 ),
                 child: Text(
@@ -137,10 +137,10 @@ class ErrorMessage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.error.withValues(alpha: 0.1),
+        color: AppColors.error.withOpacity(0.1),
         borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
         border: Border.all(
-          color: AppColors.error.withValues(alpha: 0.3),
+          color: AppColors.error.withOpacity(0.3),
         ),
       ),
       child: Row(
@@ -195,10 +195,10 @@ class SuccessMessage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.success.withValues(alpha: 0.1),
+        color: AppColors.success.withOpacity(0.1),
         borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
         border: Border.all(
-          color: AppColors.success.withValues(alpha: 0.3),
+          color: AppColors.success.withOpacity(0.3),
         ),
       ),
       child: Row(
@@ -253,10 +253,10 @@ class WarningMessage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.warning.withValues(alpha: 0.1),
+        color: AppColors.warning.withOpacity(0.1),
         borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
         border: Border.all(
-          color: AppColors.warning.withValues(alpha: 0.3),
+          color: AppColors.warning.withOpacity(0.3),
         ),
       ),
       child: Row(
@@ -311,10 +311,10 @@ class InfoMessage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
-        color: AppColors.info.withValues(alpha: 0.1),
+        color: AppColors.info.withOpacity(0.1),
         borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
         border: Border.all(
-          color: AppColors.info.withValues(alpha: 0.3),
+          color: AppColors.info.withOpacity(0.3),
         ),
       ),
       child: Row(

@@ -614,12 +614,12 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            model.provider.color.withValues(alpha: 0.1),
+            model.provider.color.withOpacity(0.1),
             Colors.white,
           ],
         ),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: model.provider.color.withValues(alpha: 0.3)),
+        border: Border.all(color: model.provider.color.withOpacity(0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -630,7 +630,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  model.provider.color.withValues(alpha: 0.8),
+                  model.provider.color.withOpacity(0.8),
                   model.provider.color,
                 ],
               ),
@@ -815,7 +815,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
                               end: Alignment.bottomCenter,
                               colors: [
                                 model.provider.color,
-                                model.provider.color.withValues(alpha: 0.5),
+                                model.provider.color.withOpacity(0.5),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(2),
@@ -915,7 +915,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: [
-                                    model.provider.color.withValues(alpha: 0.7),
+                                    model.provider.color.withOpacity(0.7),
                                     model.provider.color,
                                   ],
                                 ),
@@ -1016,7 +1016,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                model.provider.color.withValues(alpha: 0.7),
+                                model.provider.color.withOpacity(0.7),
                                 model.provider.color,
                               ],
                             ),
@@ -1146,7 +1146,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
           scrollDirection: Axis.horizontal,
           child: DataTable(
             headingRowColor: WidgetStateProperty.all(
-              AppColors.primary.withValues(alpha: 0.1),
+              AppColors.primary.withOpacity(0.1),
             ),
             columns: [
               const DataColumn(
@@ -1217,7 +1217,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
                           end: Alignment.bottomCenter,
                           colors: [
                             model.provider.color,
-                            model.provider.color.withValues(alpha: 0.5),
+                            model.provider.color.withOpacity(0.5),
                           ],
                         ),
                         borderRadius: BorderRadius.circular(2),
@@ -1245,7 +1245,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
                                   style: const TextStyle(fontSize: 10),
                                 ),
                                 avatar: Icon(cap.icon, size: 12),
-                                backgroundColor: model.provider.color.withValues(alpha: 0.1),
+                                backgroundColor: model.provider.color.withOpacity(0.1),
                                 padding: EdgeInsets.zero,
                                 materialTapTargetSize:
                                     MaterialTapTargetSize.shrinkWrap,
@@ -1313,7 +1313,7 @@ class _ModelComparisonScreenState extends ConsumerState<ModelComparisonScreen>
           return Container(
             decoration: BoxDecoration(
               color: row.highlight
-                  ? AppColors.primary.withValues(alpha: 0.05)
+                  ? AppColors.primary.withOpacity(0.05)
                   : null,
               border: !isLast
                   ? Border(bottom: BorderSide(color: Colors.grey.shade200))
@@ -1511,7 +1511,7 @@ class _ModelSelectionSheet extends StatelessWidget {
                   leading: Container(
                     padding: const EdgeInsets.all(AppSpacing.sm),
                     decoration: BoxDecoration(
-                      color: model.provider.color.withValues(alpha: 0.1),
+                      color: model.provider.color.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(
@@ -1651,7 +1651,7 @@ class _ExportOption extends StatelessWidget {
       leading: Container(
         padding: const EdgeInsets.all(AppSpacing.sm),
         decoration: BoxDecoration(
-          color: AppColors.primary.withValues(alpha: 0.1),
+          color: AppColors.primary.withOpacity(0.1),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Icon(icon, color: AppColors.primary),

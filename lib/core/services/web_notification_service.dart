@@ -1,7 +1,23 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import '../utils/platform_helper.dart';
-import 'dart:html' as html;
+// TODO: Add conditional import for dart:html when web-specific implementation is needed
+// import 'dart:html' as html;
+
+/// Stub class for Notification until dart:html is properly integrated
+class _NotificationStub {
+  static bool get supported => false;
+  static String get permission => 'denied';
+  static Future<String> requestPermission() async => 'denied';
+
+  final Stream<dynamic> onClick = const Stream.empty();
+  final Stream<dynamic> onClose = const Stream.empty();
+  final Stream<dynamic> onError = const Stream.empty();
+
+  _NotificationStub(String title, Map<String, dynamic> options);
+
+  void close() {}
+}
 
 /// Service for Web Notifications API
 ///
@@ -34,7 +50,7 @@ class WebNotificationService {
     if (!PlatformHelper.isWeb) return false;
 
     try {
-      return html.Notification.supported;
+      return _NotificationStub.supported;
     } catch (e) {
       return false;
     }
@@ -47,7 +63,7 @@ class WebNotificationService {
     if (!isSupported) return 'denied';
 
     try {
-      return html.Notification.permission;
+      return _NotificationStub.permission;
     } catch (e) {
       debugPrint('Failed to get notification permission: $e');
       return 'denied';
@@ -73,7 +89,7 @@ class WebNotificationService {
     }
 
     try {
-      final permission = await html.Notification.requestPermission();
+      final permission = await _NotificationStub.requestPermission();
       return permission == 'granted';
     } catch (e) {
       debugPrint('Failed to request notification permission: $e');
@@ -84,7 +100,8 @@ class WebNotificationService {
   /// Show a notification
   ///
   /// Returns the notification object or null if failed
-  Future<html.Notification?> showNotification({
+  /// CURRENTLY STUBBED: Requires dart:html for full implementation
+  Future<_NotificationStub?> showNotification({
     required String title,
     String? body,
     String? icon,
@@ -128,7 +145,7 @@ class WebNotificationService {
         options['actions'] = actions;
       }
 
-      final notification = html.Notification(title, options);
+      final notification = _NotificationStub(title, options);
 
       // Set up event listeners
       if (onClick != null) {
@@ -158,7 +175,7 @@ class WebNotificationService {
   }
 
   /// Show a simple notification with just title and body
-  Future<html.Notification?> showSimpleNotification({
+  Future<_NotificationStub?> showSimpleNotification({
     required String title,
     String? body,
     String? icon,
@@ -173,7 +190,7 @@ class WebNotificationService {
   }
 
   /// Show a notification with actions (requires service worker)
-  Future<html.Notification?> showActionableNotification({
+  Future<_NotificationStub?> showActionableNotification({
     required String title,
     String? body,
     String? icon,
@@ -190,7 +207,7 @@ class WebNotificationService {
   }
 
   /// Show a notification that requires user interaction to dismiss
-  Future<html.Notification?> showPersistentNotification({
+  Future<_NotificationStub?> showPersistentNotification({
     required String title,
     String? body,
     String? icon,
@@ -206,7 +223,7 @@ class WebNotificationService {
   }
 
   /// Show a silent notification (no sound)
-  Future<html.Notification?> showSilentNotification({
+  Future<_NotificationStub?> showSilentNotification({
     required String title,
     String? body,
     String? icon,
@@ -258,7 +275,7 @@ class NotificationAction {
 /// Preset notification configurations
 class NotificationPresets {
   /// New message notification
-  static Future<html.Notification?> newMessage({
+  static Future<_NotificationStub?> newMessage({
     required String sender,
     required String message,
     String? icon,
@@ -275,7 +292,7 @@ class NotificationPresets {
   }
 
   /// Error notification
-  static Future<html.Notification?> error({
+  static Future<_NotificationStub?> error({
     required String title,
     String? message,
     VoidCallback? onClick,
@@ -291,7 +308,7 @@ class NotificationPresets {
   }
 
   /// Success notification
-  static Future<html.Notification?> success({
+  static Future<_NotificationStub?> success({
     required String title,
     String? message,
   }) {
@@ -305,7 +322,7 @@ class NotificationPresets {
   }
 
   /// Info notification
-  static Future<html.Notification?> info({
+  static Future<_NotificationStub?> info({
     required String title,
     String? message,
     Duration? autoClose,
@@ -320,7 +337,7 @@ class NotificationPresets {
   }
 
   /// Task completed notification
-  static Future<html.Notification?> taskCompleted({
+  static Future<_NotificationStub?> taskCompleted({
     required String taskName,
     VoidCallback? onClick,
   }) {

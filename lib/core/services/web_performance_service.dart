@@ -1,9 +1,50 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import '../utils/platform_helper.dart';
-import 'dart:html' as html;
+// TODO: Add conditional import for dart:html when web-specific implementation is needed
+// import 'dart:html' as html;
+
+/// Stub class for Performance API until dart:html is properly integrated
+class _PerformanceTiming {
+  int? get navigationStart => 0;
+  int? get domainLookupStart => 0;
+  int? get domainLookupEnd => 0;
+  int? get connectStart => 0;
+  int? get connectEnd => 0;
+  int? get requestStart => 0;
+  int? get responseStart => 0;
+  int? get responseEnd => 0;
+  int? get domContentLoadedEventEnd => 0;
+  int? get loadEventEnd => 0;
+  int? get domInteractive => 0;
+}
+
+class _PerformanceEntry {
+  String get name => '';
+  num get duration => 0;
+  num get startTime => 0;
+}
+
+class _PerformanceResourceTiming extends _PerformanceEntry {
+  int get transferSize => 0;
+  int get encodedBodySize => 0;
+  int get decodedBodySize => 0;
+}
+
+class _PerformanceStub {
+  _PerformanceTiming get timing => _PerformanceTiming();
+  List<_PerformanceEntry> getEntriesByType(String type) => [];
+  List<_PerformanceEntry> getEntriesByName(String name, String type) => [];
+  void mark(String name) {}
+  void measure(String name, String startMark, String endMark) {}
+  void clearMarks([String? name]) {}
+  void clearMeasures([String? name]) {}
+}
+
+final _performanceStub = _PerformanceStub();
 
 /// Service for monitoring web performance
+/// CURRENTLY STUBBED: Requires dart:html for full implementation
 ///
 /// Provides utilities for measuring page load performance,
 /// tracking Core Web Vitals, and monitoring resource loading.
@@ -34,11 +75,8 @@ class WebPerformanceService {
   bool get isSupported {
     if (!isWeb) return false;
 
-    try {
-      return html.window.performance != null;
-    } catch (e) {
-      return false;
-    }
+    // Stubbed - always return false until dart:html is properly integrated
+    return false;
   }
 
   /// Get basic performance metrics
@@ -46,7 +84,7 @@ class WebPerformanceService {
     if (!isSupported) return {};
 
     try {
-      final timing = html.window.performance!.timing;
+      final timing = _performanceStub.timing;
       final navigationStart = timing.navigationStart ?? 0;
 
       return {
@@ -70,7 +108,7 @@ class WebPerformanceService {
     if (!isSupported) return null;
 
     try {
-      final timing = html.window.performance!.timing;
+      final timing = _performanceStub.timing;
       final navigationStart = timing.navigationStart ?? 0;
       final responseStart = timing.responseStart ?? 0;
 
@@ -86,7 +124,7 @@ class WebPerformanceService {
     if (!isSupported) return null;
 
     try {
-      final timing = html.window.performance!.timing;
+      final timing = _performanceStub.timing;
       final navigationStart = timing.navigationStart ?? 0;
       final domContentLoaded = timing.domContentLoadedEventEnd ?? 0;
 
@@ -102,7 +140,7 @@ class WebPerformanceService {
     if (!isSupported) return null;
 
     try {
-      final timing = html.window.performance!.timing;
+      final timing = _performanceStub.timing;
       final navigationStart = timing.navigationStart ?? 0;
       final loadEventEnd = timing.loadEventEnd ?? 0;
 
@@ -118,11 +156,11 @@ class WebPerformanceService {
     if (!isSupported) return [];
 
     try {
-      final entries = html.window.performance!.getEntriesByType('resource');
+      final entries = _performanceStub.getEntriesByType('resource');
       final List<Map<String, dynamic>> timings = [];
 
       for (final entry in entries) {
-        final resourceEntry = entry as html.PerformanceResourceTiming;
+        final resourceEntry = entry as _PerformanceResourceTiming;
 
         timings.add({
           'name': resourceEntry.name,
@@ -146,7 +184,7 @@ class WebPerformanceService {
     if (!isSupported) return;
 
     try {
-      html.window.performance!.mark(name);
+      _performanceStub.mark(name);
     } catch (e) {
       debugPrint('Failed to create performance mark: $e');
     }
@@ -157,9 +195,9 @@ class WebPerformanceService {
     if (!isSupported) return null;
 
     try {
-      html.window.performance!.measure(name, startMark, endMark);
+      _performanceStub.measure(name, startMark, endMark);
 
-      final entries = html.window.performance!.getEntriesByName(name, 'measure');
+      final entries = _performanceStub.getEntriesByName(name, 'measure');
       if (entries.isNotEmpty) {
         return entries.first.duration;
       }
@@ -176,7 +214,7 @@ class WebPerformanceService {
     if (!isSupported) return;
 
     try {
-      html.window.performance!.clearMarks();
+      _performanceStub.clearMarks();
     } catch (e) {
       debugPrint('Failed to clear performance marks: $e');
     }
@@ -187,7 +225,7 @@ class WebPerformanceService {
     if (!isSupported) return;
 
     try {
-      html.window.performance!.clearMeasures();
+      _performanceStub.clearMeasures();
     } catch (e) {
       debugPrint('Failed to clear performance measures: $e');
     }
