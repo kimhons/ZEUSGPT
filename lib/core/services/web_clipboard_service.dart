@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import '../utils/platform_helper.dart';
-import 'dart:html' as html;
+// TODO: Re-enable when dart:html is properly configured for web
+// import 'dart:html' as html;
 
 /// Service for enhanced clipboard operations on web
 ///
@@ -22,29 +23,18 @@ class WebClipboardService {
   bool get isSupported {
     if (!kIsWeb) return false;
     if (!PlatformHelper.isWeb) return false;
-    
-    try {
-      return html.window.navigator.clipboard != null;
-    } catch (e) {
-      return false;
-    }
+
+    // TODO: Re-enable when dart:html is properly configured
+    // Fall back to Flutter's clipboard which works on all platforms
+    return true; // Flutter Clipboard is always available
   }
 
   /// Write text to clipboard
   Future<bool> writeText(String text) async {
-    if (!kIsWeb) {
-      throw UnsupportedError('Web Clipboard API only available on web platform');
-    }
-
     try {
-      if (isSupported) {
-        await html.window.navigator.clipboard!.writeText(text);
-        return true;
-      } else {
-        // Fallback to Flutter's clipboard
-        await Clipboard.setData(ClipboardData(text: text));
-        return true;
-      }
+      // Use Flutter's cross-platform clipboard API
+      await Clipboard.setData(ClipboardData(text: text));
+      return true;
     } catch (e) {
       debugPrint('Write to clipboard failed: $e');
       return false;
@@ -53,19 +43,10 @@ class WebClipboardService {
 
   /// Read text from clipboard
   Future<String?> readText() async {
-    if (!kIsWeb) {
-      throw UnsupportedError('Web Clipboard API only available on web platform');
-    }
-
     try {
-      if (isSupported) {
-        final text = await html.window.navigator.clipboard!.readText();
-        return text;
-      } else {
-        // Fallback to Flutter's clipboard
-        final data = await Clipboard.getData(Clipboard.kTextPlain);
-        return data?.text;
-      }
+      // Use Flutter's cross-platform clipboard API
+      final data = await Clipboard.getData(Clipboard.kTextPlain);
+      return data?.text;
     } catch (e) {
       debugPrint('Read from clipboard failed: $e');
       return null;
@@ -74,11 +55,9 @@ class WebClipboardService {
 
   /// Check if clipboard contains text
   Future<bool> hasText() async {
-    if (!kIsWeb) return false;
-    
     try {
-      final text = await readText();
-      return text != null && text.isNotEmpty;
+      final data = await Clipboard.hasStrings();
+      return data;
     } catch (e) {
       return false;
     }
@@ -90,13 +69,13 @@ class WebClipboardService {
     Function(String)? onError,
   }) async {
     final success = await writeText(text);
-    
+
     if (success) {
       onSuccess?.call();
     } else {
       onError?.call('Failed to copy to clipboard');
     }
-    
+
     return success;
   }
 }

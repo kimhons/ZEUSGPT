@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import '../utils/platform_helper.dart';
-import 'dart:js' as js;
-import 'dart:html' as html;
+// TODO: Re-enable when dart:html/dart:js are properly configured for web
+// import 'dart:js' as js;
+// import 'dart:html' as html;
 
 /// Service for integrating with Web Share API
 ///
@@ -25,24 +26,28 @@ class WebShareService {
   bool get isSupported {
     if (!kIsWeb) return false;
     if (!PlatformHelper.isWeb) return false;
-    
-    try {
-      return js.context.hasProperty('navigator') &&
-             js.context['navigator'].hasProperty('share');
-    } catch (e) {
-      return false;
-    }
+
+    // TODO: Re-enable when dart:html/dart:js are properly configured
+    return false;
+    // try {
+    //   return js.context.hasProperty('navigator') &&
+    //          js.context['navigator'].hasProperty('share');
+    // } catch (e) {
+    //   return false;
+    // }
   }
 
   /// Check if sharing files is supported
   bool get canShareFiles {
     if (!isSupported) return false;
-    
-    try {
-      return js.context['navigator'].hasProperty('canShare');
-    } catch (e) {
-      return false;
-    }
+
+    // TODO: Re-enable when dart:html/dart:js are properly configured
+    return false;
+    // try {
+    //   return js.context['navigator'].hasProperty('canShare');
+    // } catch (e) {
+    //   return false;
+    // }
   }
 
   /// Share text, URL, or title using Web Share API
@@ -61,31 +66,35 @@ class WebShareService {
       throw ArgumentError('At least one of title, text, or url must be provided');
     }
 
-    if (isSupported) {
-      try {
-        final shareData = <String, dynamic>{};
-        if (title != null) shareData['title'] = title;
-        if (text != null) shareData['text'] = text;
-        if (url != null) shareData['url'] = url;
+    // TODO: Re-enable when dart:html/dart:js are properly configured
+    debugPrint('Web Share API not available - feature disabled');
+    return false;
 
-        await js.context['navigator'].callMethod('share', [js.JsObject.jsify(shareData)]);
-        return true;
-      } catch (e) {
-        // User cancelled or error occurred
-        debugPrint('Share failed: $e');
-        return _fallbackToCopyToClipboard(text ?? url ?? title ?? '');
-      }
-    } else {
-      // Fallback to clipboard
-      return _fallbackToCopyToClipboard(text ?? url ?? title ?? '');
-    }
+    // if (isSupported) {
+    //   try {
+    //     final shareData = <String, dynamic>{};
+    //     if (title != null) shareData['title'] = title;
+    //     if (text != null) shareData['text'] = text;
+    //     if (url != null) shareData['url'] = url;
+
+    //     await js.context['navigator'].callMethod('share', [js.JsObject.jsify(shareData)]);
+    //     return true;
+    //   } catch (e) {
+    //     // User cancelled or error occurred
+    //     debugPrint('Share failed: $e');
+    //     return _fallbackToCopyToClipboard(text ?? url ?? title ?? '');
+    //   }
+    // } else {
+    //   // Fallback to clipboard
+    //   return _fallbackToCopyToClipboard(text ?? url ?? title ?? '');
+    // }
   }
 
   /// Share files using Web Share API
   ///
   /// Only works on browsers that support file sharing
   Future<bool> shareFiles({
-    required List<html.File> files,
+    required List<dynamic> files, // Changed from html.File to dynamic
     String? title,
     String? text,
   }) async {
@@ -93,43 +102,51 @@ class WebShareService {
       throw UnsupportedError('Web Share API only available on web platform');
     }
 
-    if (!canShareFiles) {
-      throw UnsupportedError('File sharing not supported in this browser');
-    }
+    // TODO: Re-enable when dart:html/dart:js are properly configured
+    debugPrint('File sharing not available - feature disabled');
+    return false;
 
-    try {
-      final shareData = <String, dynamic>{
-        'files': files,
-      };
-      if (title != null) shareData['title'] = title;
-      if (text != null) shareData['text'] = text;
+    // if (!canShareFiles) {
+    //   throw UnsupportedError('File sharing not supported in this browser');
+    // }
 
-      // Check if can share these files
-      final canShare = await js.context['navigator'].callMethod(
-        'canShare',
-        [js.JsObject.jsify(shareData)],
-      );
+    // try {
+    //   final shareData = <String, dynamic>{
+    //     'files': files,
+    //   };
+    //   if (title != null) shareData['title'] = title;
+    //   if (text != null) shareData['text'] = text;
 
-      if (canShare) {
-        await js.context['navigator'].callMethod('share', [js.JsObject.jsify(shareData)]);
-        return true;
-      }
-      return false;
-    } catch (e) {
-      debugPrint('File share failed: $e');
-      return false;
-    }
+    //   // Check if can share these files
+    //   final canShare = await js.context['navigator'].callMethod(
+    //     'canShare',
+    //     [js.JsObject.jsify(shareData)],
+    //   );
+
+    //   if (canShare) {
+    //     await js.context['navigator'].callMethod('share', [js.JsObject.jsify(shareData)]);
+    //     return true;
+    //   }
+    //   return false;
+    // } catch (e) {
+    //   debugPrint('File share failed: $e');
+    //   return false;
+    // }
   }
 
   /// Fallback to copying text to clipboard
   Future<bool> _fallbackToCopyToClipboard(String text) async {
-    try {
-      await html.window.navigator.clipboard?.writeText(text);
-      debugPrint('Copied to clipboard as fallback');
-      return true;
-    } catch (e) {
-      debugPrint('Clipboard fallback failed: $e');
-      return false;
-    }
+    // TODO: Re-enable when dart:html is properly configured
+    debugPrint('Clipboard fallback not available - feature disabled');
+    return false;
+
+    // try {
+    //   await html.window.navigator.clipboard?.writeText(text);
+    //   debugPrint('Copied to clipboard as fallback');
+    //   return true;
+    // } catch (e) {
+    //   debugPrint('Clipboard fallback failed: $e');
+    //   return false;
+    // }
   }
 }
