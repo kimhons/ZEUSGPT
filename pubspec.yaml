@@ -1,0 +1,255 @@
+name: zeusgpt
+description: The most powerful multi-LLM AI assistant. Access 500+ models in one beautiful app.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Routing & Navigation
+  go_router: ^14.2.0
+
+  # Firebase
+  firebase_core: ^3.3.0
+  firebase_auth: ^5.1.4
+  firebase_analytics: ^11.2.1
+  firebase_crashlytics: ^4.0.4
+  firebase_messaging: ^15.0.4
+  firebase_remote_config: ^5.0.4
+  firebase_storage: ^12.1.3
+  cloud_firestore: ^5.2.1
+  cloud_functions: ^5.0.4
+
+  # Supabase (Alternative/Complementary Backend)
+  supabase_flutter: ^2.5.6
+
+  # Authentication
+  google_sign_in: ^6.2.1
+  sign_in_with_apple: ^6.1.1
+  local_auth: ^2.2.0  # Biometric auth
+
+  # HTTP & API
+  dio: ^5.5.0+1
+  retrofit: ^4.1.0
+  json_annotation: ^4.9.0
+  freezed_annotation: ^2.4.4
+
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.2.3
+  sqflite: ^2.3.3+1  # Mobile database
+  sqflite_common_ffi: ^2.3.3  # Desktop database support
+
+  # UI Components & Theming
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10+1
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  lottie: ^3.1.2
+  flutter_animate: ^4.5.0
+
+  # Chat & Messaging UI
+  flutter_chat_ui: ^1.6.13
+  flutter_markdown: ^0.7.3
+  markdown: ^7.2.2
+  flutter_syntax_view: ^4.0.0  # Code highlighting
+  flutter_math_fork: ^0.7.2  # LaTeX support
+
+  # Image Handling
+  image_picker: ^1.1.2
+  photo_view: ^0.15.0
+  flutter_image_compress: ^2.3.0
+
+  # Voice & Audio
+  # speech_to_text: ^6.6.0  # TEMPORARILY DISABLED for Android build on Flutter 3.35+
+  # TODO: Re-enable when plugin is updated for Flutter 3.35+ Android compatibility
+  flutter_tts: ^4.0.2
+  audioplayers: ^6.0.0
+  # record: ^5.1.2  # TEMPORARILY DISABLED for macOS build
+  # TODO: Re-enable when record_linux package fixes compatibility issue
+
+  # File Handling
+  file_picker: ^8.0.6
+  path_provider: ^2.1.3
+  open_file: ^3.3.2
+  share_plus: ^9.0.0
+  pdf: ^3.11.0  # PDF generation
+
+  # Utilities
+  intl: ^0.19.0
+  uuid: ^4.4.2
+  url_launcher: ^6.3.0
+  package_info_plus: ^8.0.0
+  device_info_plus: ^10.1.0
+  connectivity_plus: ^6.0.3
+  permission_handler: ^11.3.1
+
+  # Security & Encryption
+  encrypt: ^5.0.3
+  crypto: ^3.0.3
+  pointycastle: ^3.9.1
+
+  # Analytics & Monitoring
+  sentry_flutter: ^8.3.0
+  mixpanel_flutter: ^2.3.1
+
+  # In-App Purchases
+  # purchases_flutter: ^6.29.5  # RevenueCat - TEMPORARILY DISABLED for macOS build
+  # TODO: Re-enable when RevenueCat fixes macOS compatibility or update to ^9.9.3
+  in_app_purchase: ^3.2.0
+
+  # Code Generation
+  logger: ^2.3.0
+  equatable: ^2.0.5
+
+  # Web-specific
+  flutter_web_plugins:
+    sdk: flutter
+  http: ^1.2.1  # For cross-platform HTTP calls
+  universal_html: ^2.2.4  # Cross-platform HTML/DOM access
+  universal_io: ^2.2.2  # Cross-platform IO operations
+  url_strategy: ^0.2.0  # Clean URLs for web (remove #)
+
+  # Desktop-specific
+  window_manager: ^0.3.9  # Desktop window management
+  screen_retriever: ^0.1.9  # Screen info for desktop
+  tray_manager: ^0.2.3  # System tray support
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linting & Code Quality
+  flutter_lints: ^4.0.0
+  very_good_analysis: ^6.0.0
+
+  # Code Generation
+  build_runner: ^2.4.11
+  freezed: ^2.5.2
+  json_serializable: ^6.8.0
+  riverpod_generator: ^2.4.0
+  retrofit_generator: ^8.1.2
+  hive_generator: ^2.0.1
+
+  # Testing
+  mockito: ^5.4.4
+  mocktail: ^1.0.4
+  fake_async: ^1.3.1
+  network_image_mock: ^2.1.1
+  integration_test:
+    sdk: flutter
+
+  # Icons & Assets
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.1
+
+# Flutter configuration
+flutter:
+  uses-material-design: true
+
+  # Assets
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
+    - assets/fonts/
+
+  # Fonts
+  # TODO: Add SF Pro fonts to assets/fonts/ directory
+  # fonts:
+  #   - family: SFPro
+  #     fonts:
+  #       - asset: assets/fonts/SF-Pro-Display-Regular.otf
+  #       - asset: assets/fonts/SF-Pro-Display-Bold.otf
+  #         weight: 700
+  #       - asset: assets/fonts/SF-Pro-Display-Semibold.otf
+  #         weight: 600
+  #       - asset: assets/fonts/SF-Pro-Text-Regular.otf
+  #       - asset: assets/fonts/SF-Pro-Text-Medium.otf
+  #         weight: 500
+
+# Flutter Launcher Icons Configuration
+flutter_launcher_icons:
+  android: true
+  ios: true
+  web: true
+  windows: true
+  macos: true
+  linux: true
+  image_path: "assets/icons/app_icon.png"
+  adaptive_icon_background: "#1E88E5"
+  adaptive_icon_foreground: "assets/icons/app_icon_foreground.png"
+
+  # Platform-specific
+  ios_config:
+    generate_all_icons: true
+  android_config:
+    generate_rounded: true
+  web_config:
+    generate: true
+    background_color: "#1E88E5"
+  windows_config:
+    generate: true
+  macos_config:
+    generate: true
+  linux_config:
+    generate: true
+
+# Flutter Native Splash Configuration
+flutter_native_splash:
+  color: "#1E88E5"
+  image: assets/images/splash_logo.png
+  branding: assets/images/branding.png
+
+  android_12:
+    image: assets/images/splash_logo_android12.png
+    icon_background_color: "#1E88E5"
+
+  web: true
+  android: true
+  ios: true
+
+# Code Generation Settings
+freezed:
+  immutable_base_class: true
+
+# Linting Rules (imported from flutter_lints & very_good_analysis)
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/generated/**"
+
+  errors:
+    invalid_annotation_target: ignore
+
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+  plugins:
+    - dart_code_metrics
+
+dart_code_metrics:
+  metrics:
+    cyclomatic-complexity: 20
+    number-of-parameters: 6
+    maximum-nesting-level: 5
+
+  rules:
+    - prefer-conditional-expressions
+    - prefer-correct-type-name
+    - prefer-first
+    - prefer-last
+    - prefer-trailing-comma
