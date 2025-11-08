@@ -199,7 +199,7 @@ class WebPerformanceService {
 
       final entries = _performanceStub.getEntriesByName(name, 'measure');
       if (entries.isNotEmpty) {
-        return entries.first.duration;
+        return entries.first.duration.toDouble();
       }
 
       return null;
@@ -258,13 +258,14 @@ class WebPerformanceService {
   void monitorPerformance(Function(Map<String, dynamic>) callback) {
     if (!isSupported) return;
 
+    // TODO: Implement when dart:html is available
     // Wait for page load
-    html.window.onLoad.listen((_) {
-      // Give browser time to settle
-      Future.delayed(const Duration(milliseconds: 100), () {
-        callback(getPerformanceMetrics());
-      });
-    });
+    // html.window.onLoad.listen((_) {
+    //   // Give browser time to settle
+    //   Future.delayed(const Duration(milliseconds: 100), () {
+    //     callback(getPerformanceMetrics());
+    //   });
+    // });
   }
 }
 
